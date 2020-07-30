@@ -66,6 +66,14 @@ while True:
 			cv2.putText(frame, name, (left, y), cv2.FONT_HERSHEY_SIMPLEX,
 				0.75, (0, 255, 0), 2)
 
+	cv2.imshow("Frame", frame)
+	key = cv2.waitKey(1) & 0xFF
+
+	if key == ord("q"):
+		break
+
+cv2.destroyAllWindows()
+vs.stop()
 
 
 
