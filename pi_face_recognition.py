@@ -3,6 +3,8 @@
 import argparse
 import pickle
 import cv2
+from imutils.video import VideoStream
+
 
 
 
@@ -16,4 +18,8 @@ args = vars(ap.parse_args())
 data = pickle.loads(open(args["encodings"], "rb").read())
 
 detector = cv2.CascadeClassifier(args["cascade"])
+
+vs = VideoStream(usePiCamera=True).start()
+
+
 
