@@ -30,4 +30,7 @@ for (i, imagePath) in enumerate(imagePaths):
 	image = cv2.imread(imagePath)
 	rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
+	boxes = face_recognition.face_locations(rgb,
+		model=args["detection_method"])
+
 
