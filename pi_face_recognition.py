@@ -37,5 +37,8 @@ while True:
 	
 	boxes = [(y, x + w, y + h, x) for (x, y, w, h) in rects]
 
+	encodings = face_recognition.face_encodings(rgb, boxes)
+	names = []
+
 
 
