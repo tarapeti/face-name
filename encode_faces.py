@@ -33,6 +33,10 @@ for (i, imagePath) in enumerate(imagePaths):
 	boxes = face_recognition.face_locations(rgb,
 		model=args["detection_method"])
 
-	encodings = face_recognition.face_encodings(rgb, boxes
+	encodings = face_recognition.face_encodings(rgb, boxes)
+
+	for encoding in encodings:
+		knownEncodings.append(encoding)
+		knownNames.append(name)
 
 
