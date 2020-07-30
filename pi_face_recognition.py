@@ -46,6 +46,11 @@ while True:
 			encoding)
 		name = "Unknown"
 
+		if True in matches:
+
+			matchedIdxs = [i for (i, b) in enumerate(matches) if b]
+			counts = {}
+
 
 
 
