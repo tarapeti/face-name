@@ -15,3 +15,16 @@ ap.add_argument("-e", "--encodings", required=True,
 ap.add_argument("-d", "--detection-method", type=str, default="cnn",
 	help="`hog` or `cnn`")
 args = vars(ap.parse_args())
+
+imagePaths = list(paths.list_images(args["dataset"]))
+
+knownEncodings = []
+knownNames = []
+
+for (i, imagePath) in enumerate(imagePaths):
+
+	print("processing image {}/{}".format(i + 1,
+		len(imagePaths)))
+	name = imagePath.split(os.path.sep)[-2]
+
+
