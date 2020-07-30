@@ -27,4 +27,7 @@ for (i, imagePath) in enumerate(imagePaths):
 		len(imagePaths)))
 	name = imagePath.split(os.path.sep)[-2]
 
+	image = cv2.imread(imagePath)
+	rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
 
