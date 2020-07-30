@@ -5,9 +5,8 @@ import pickle
 import cv2
 from imutils.video import VideoStream
 import time
-
-
-
+import imutils
+import face_recognition
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-c", "--cascade", required=True,
