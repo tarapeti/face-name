@@ -2,6 +2,8 @@
 
 import argparse
 import pickle
+import cv2
+
 
 
 ap = argparse.ArgumentParser()
@@ -12,3 +14,6 @@ ap.add_argument("-e", "--encodings", required=True,
 args = vars(ap.parse_args())
 
 data = pickle.loads(open(args["encodings"], "rb").read())
+
+detector = cv2.CascadeClassifier(args["cascade"])
+
