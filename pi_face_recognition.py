@@ -39,6 +39,14 @@ while True:
 
 	encodings = face_recognition.face_encodings(rgb, boxes)
 	names = []
+	
+	for encoding in encodings:
+
+		matches = face_recognition.compare_faces(data["encodings"],
+			encoding)
+		name = "Unknown"
+
+
 
 
 
