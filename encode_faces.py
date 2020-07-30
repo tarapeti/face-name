@@ -39,4 +39,9 @@ for (i, imagePath) in enumerate(imagePaths):
 		knownEncodings.append(encoding)
 		knownNames.append(name)
 
+data = {"encodings": knownEncodings, "names": knownNames}
+f = open(args["encodings"], "wb")
+f.write(pickle.dumps(data))
+f.close()
+
 
