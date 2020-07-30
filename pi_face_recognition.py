@@ -51,6 +51,10 @@ while True:
 			matchedIdxs = [i for (i, b) in enumerate(matches) if b]
 			counts = {}
 
+			for i in matchedIdxs:
+				name = data["names"][i]
+				counts[name] = counts.get(name, 0) + 1
+
 
 
 
