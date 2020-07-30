@@ -4,6 +4,7 @@ import argparse
 import pickle
 import cv2
 from imutils.video import VideoStream
+import time
 
 
 
@@ -21,5 +22,13 @@ detector = cv2.CascadeClassifier(args["cascade"])
 
 vs = VideoStream(usePiCamera=True).start()
 
+time.sleep(2.0)
+
+while True:
+	frame = vs.read()
+	frame = imutils.resize(frame, width=500)
+
+	gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+	rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
 
