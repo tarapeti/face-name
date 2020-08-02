@@ -14,4 +14,11 @@ detector = cv2.CascadeClassifier(args["cascade"])
 
 vs = VideoStream(usePiCamera=True).start()
 
+tatal = 0
+
+while True:
+	frame = vs.read()
+	old = frame.copy()
+	frame = imutils.resize(frame, width = 400)
+
 
