@@ -22,6 +22,9 @@ while True:
 	frame = imutils.resize(frame, width = 400)
 
 	rects = detectore.detecMultiScale(cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY), scaleFactor = 1.1, minNeighbors = 5, minSize = (30, 30))
+	
+	for(x, y, w, h) in rects:
+        	cv2.rectangle(frame, (x, y), (x + w, y +h), (0, 255, 0), 2)
  
 
 
