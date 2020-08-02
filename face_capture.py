@@ -25,6 +25,20 @@ while True:
 	
 	for(x, y, w, h) in rects:
         	cv2.rectangle(frame, (x, y), (x + w, y +h), (0, 255, 0), 2)
+
+	cv2.imshow("Ablak", frame)
+        key = cv2.waitKey(1) & 0xFF
+    
+        if key == ord("f"):
+            p = os.path.sep.join([args["output"], "{}.png".format(
+            str(total).zfill(5))]) 
+            cv2.imwrite(p, frame)
+            total += 1
+        elif key == ord("q"):
+            break
+    
+cv2.destroyAllWindows()
+vs.stop()
  
 
 
